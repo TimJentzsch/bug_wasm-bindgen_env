@@ -1,16 +1,12 @@
 set -e
 set -x
-# --- SETUP ---
-
-# Install the required wasm-bindgen version
-
-
+  
 # --- REPRODUCTION ---
 
 echo "Reproducing the issue with wasm-bindgen..."
 
 # Compile to Wasm using the nightly toolchain
-cargo +nightly build --target=wasm32-unknown-unknown
+cargo +nightly-2025-05-16 build --target=wasm32-unknown-unknown
 
 # Create the JS bindings
 wasm-bindgen --no-typescript --target=web --out-dir=target/wasm32-unknown-unknown/debug target/wasm32-unknown-unknown/debug/bug_wasm-bindgen_env.wasm
