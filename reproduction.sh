@@ -29,3 +29,5 @@ if echo "$import_line" | grep -q 'env'; then
   echo "Error: Problematic package import found in generated JS:\n$import_line"
   exit 1
 fi
+
+echo "Success: Couldn't detect the issue anymore!"
