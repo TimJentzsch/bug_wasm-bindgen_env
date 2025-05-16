@@ -1,12 +1,14 @@
 set -e
 set -x
-  
+
 # --- REPRODUCTION ---
 
 echo "Reproducing the issue with wasm-bindgen..."
 
-# Compile to Wasm using the nightly toolchain
-cargo +nightly-2025-05-16 build --target=wasm32-unknown-unknown
+rustc --version --verbose
+
+# Compile to Wasm (ensure to use nightly Rust, see setup.sh)
+cargo build --target=wasm32-unknown-unknown
 
 # Create the JS bindings
 wasm-bindgen --no-typescript --target=web --out-dir=target/wasm32-unknown-unknown/debug target/wasm32-unknown-unknown/debug/bug_wasm-bindgen_env.wasm

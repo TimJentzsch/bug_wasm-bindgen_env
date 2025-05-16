@@ -8,4 +8,4 @@ Run the `./setup.sh` script, or replicate the commands manually.
 
 ## Reproduction
 
-To reproduce, run `./reproduction.sh` or manually execute the commands within.
+To reproduce, run `./reproduce.sh` or manually execute the commands within.
